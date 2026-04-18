@@ -1,0 +1,11 @@
+[Unit]
+Description=intel_vault git pull
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=oneshot
+WorkingDirectory=/home/matt/intel_vault
+ExecStart=/usr/bin/git pull --ff-only
+StandardOutput=journal
+StandardError=journal
