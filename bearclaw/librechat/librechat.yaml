@@ -1,0 +1,25 @@
+version: 1.2.8
+cache: true
+
+# Hide Agents tab — we don't configure agents, and it causes "agent_id required" errors for new users
+interface:
+  agentsTabs: false
+
+endpoints:
+  # Default Anthropic endpoint — Sonnet only, visible to all users
+  anthropic:
+    titleModel: "claude-haiku-4-5-20251001"
+    streamRate: 20
+
+  # Admin endpoint — Opus + Sonnet, Matt only (ergonomic restriction, not a hard security boundary)
+  custom:
+    - name: "Claude-Admin"
+      apiKey: "${ANTHROPIC_API_KEY}"
+      baseURL: "https://api.anthropic.com/v1"
+      headers:
+        anthropic-version: "2023-06-01"
+      models:
+        default:
+          - "claude-opus-4-7"
+          - "claude-sonnet-4-6"
+      modelDisplayLabel: "Claude-Admin"

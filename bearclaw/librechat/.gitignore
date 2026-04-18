@@ -1,0 +1,10 @@
+# Never commit the real env file — it contains API keys and secrets
+.env
+
+# Docker runtime data — these live in ~/librechat/ not in the repo
+data-node/
+images/
+uploads/
+logs/
+meili_data*/
+pgdata*/
