@@ -1,0 +1,7 @@
+tunnel: bearclaw-mcp
+credentials-file: /home/matt/.cloudflared/bc03d93c-e295-497e-8cee-4a97d40a95b1.json
+
+ingress:
+  - hostname: bearclaw.themakerbear.com
+    service: http://localhost:8765
+  - service: http_status:404

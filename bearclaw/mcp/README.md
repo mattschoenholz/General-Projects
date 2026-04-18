@@ -6,7 +6,7 @@ A FastMCP server that exposes the intel_vault to Claude.ai as a custom MCP conne
 
 - **Phase 0** — Prerequisites: done (Python 3.12.3, FastMCP 3.2.4)
 - **Phase 1** — Barebones vault read tools, local only: done
-- **Phase 2** — Cloudflare Tunnel (mcp.themakerbear.com): not yet implemented
+- **Phase 2** — Cloudflare Tunnel (bearclaw.themakerbear.com): done — publicly reachable, NO auth yet
 - **Phase 3** — GitHub OAuth authentication: not yet implemented
 
 ## Tools (Phase 1)
@@ -30,7 +30,7 @@ python server.py
 
 ## Transport
 
-Streamable HTTP on `127.0.0.1:8765` (localhost only until Phase 2).
+Streamable HTTP on `127.0.0.1:8765`, exposed publicly via Cloudflare Tunnel at `https://bearclaw.themakerbear.com/mcp`.
 
 ## Architecture
 
